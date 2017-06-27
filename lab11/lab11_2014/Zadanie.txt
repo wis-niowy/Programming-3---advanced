@@ -1,0 +1,42 @@
+﻿
+Klasa Matrioshka implementuje interface IChangeNotyfing.
+
+Klasa Matrioshka ma następujące właściwości:
+Name - tylko do odczytu (typu string) ustawiana przez parametr przekazywany do konstruktora.
+Theme - właściwość typu string.
+Color - właściwość typu string.
+InnerDoll - właściwość typu Matrioshka.
+
+Zmiana dowolnej z właściwości (Theme, Color, InnreDoll) powoduje wzniesienie zdarzenia Changed.
+Parametrem zdarzenia jest nazwa właściwości, która uległa zmianie.
+
+Etap pierwszy:
+Napisać klasę Matrioshka oraz klasę SimplaeWatcher.
+
+Klasa SimpleWatcher ma dwie publiczne metody:
+
+Watch przyjmującą jako parametr obiekt typu IChangeNotyfing.
+Po wywołaniu tej meteody za każdym razem gdy na przekazanym obiektcie wznoszone jest zdarzenie Changed
+watcher wypisuję na konsolę zdanie "Object changed".
+
+StopWatching przyjmującą jako parametr obiekt typu IChangeNotyfing.
+Wywołanie tej metody zatrzymuje działanie metody Watch na danym obiekcie.
+
+Etap drugi:
+Napisać klasę SmartWatcher, która działa tak jak SimpleWatcher tylko wypisuje na konsolę
+także nazwę zmieniającego się obiektu (właściwość Name) i nazwę właściwości, która uległą zmianie (parametr zdarzenia).
+
+Etap trzeci:
+Wsparcie dla grafów obiektów: w przypadku gdy lalka A zawiera lalkę B (poprzez właściwość InnerDoll)
+to jeśli zmianie ulegnie właściwość lalki B (np. Color) to lalka A powinna wznieść zdarzenie
+z parametrem opisującym zagnieżdzoną właściwość (np. InnreDoll.Color).
+Zachowanie to powinno wspierać dowolny poziom zagnieżdżenia (np. InnerDoll.InnerDoll.InnerDoll.Color).
+
+UWAGA: Właściwość InnerDoll może ulec zmianie. Np. Lalka A może zawierać lalkę B
+następnie właściwość InnerDoll lalki A może zostać zmieniona na lalkę C
+w takim momencie zmiany wlaściwości lalki B nie powinny powodować powstania zdarzeń na lalce A.
+
+Punktacja:
+Etap I    - 2 pkt.
+Etap II   - 1 pkt.
+Etap III  - 2 pkt.
