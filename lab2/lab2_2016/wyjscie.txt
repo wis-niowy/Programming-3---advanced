@@ -1,0 +1,35 @@
+
+*** Etap 1 (2p) ***
+
+Powinno byc 1: 1
+Powinno byc 0: 0
+Zasob: dlugopis, Zasob: dywan, Zasob: komputer, Zasob: olowek, 
+Powinno byc 1: 1
+Powinno byc 0: 0
+Zasob: dlugopis, Zasob: dywan, Zasob: olowek, 
+
+*** Etap 2 (1p) ***
+
+Wykonalnosc 0: 0
+Wykonalnosc 1: 1
+Wykonalnosc 1: 1
+Stan zasobow: Zasob: dlugopis, Zasob: dywan, Zasob: komputer, Zasob: olowek, 
+Rozpoczecie 0: 0
+Rozpoczecie 1: 1
+Rozpoczecie 0: 0
+Stan zasobow: Zasob: dlugopis, 
+Zakoncz zadanie 0: 0
+Zakoncz zadanie 1: 1
+Stan zasobow: Zasob: dlugopis, Zasob: dywan, Zasob: komputer, Zasob: olowek, 
+
+*** Etap 3 (1p) ***
+
+Stan projektu: Zadanie nauka c++ koszt 3, Zadanie spanie koszt 1, Zadanie nauka c++ koszt 3, 
+Stan projektu: Zadanie tajne koszt 3, Zadanie spanie koszt 1, Zadanie tajne koszt 3, 
+
+*** Etap 4 (1p) ***
+
+Test poziomu niezgodnosci (powinno byc 2): 2
+
+*** Koniec ***
+

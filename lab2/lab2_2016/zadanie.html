@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#programowanie-z-wykorzystaniem-stl">Programowanie z wykorzystaniem STL</a><ul>
+<li><a href="#etap-1-2p">Etap 1 (2p)</a></li>
+<li><a href="#etap-2-1p">Etap 2 (1p)</a></li>
+<li><a href="#etap-3-1p">Etap 3 (1p)</a></li>
+<li><a href="#etap-4-1p">Etap 4 (1p)</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="programowanie-z-wykorzystaniem-stl">Programowanie z wykorzystaniem STL</h1>
+<p>Celem zadania jest wykorzystanie algorytmów z STL, zamiast pisania własnego kodu. Większość algorytmów zawiera w sobie pętle po zakresach podanych jako argumenty, w związku z tym w rozwiązaniu zadania <strong>nie wolno używać pętli</strong>, o ile nie zostało jawnie powiedziane, że wolno. Należy wykorzystać algorytmy z STL.</p>
+<p>Zadanie jest podzielone na 4 etapy, które trzeba wykonać w podanej kolejności.</p>
+<p>Dostarczone są trzy klasy reprezentujące projekt, zadania i zasoby. Należy napisać zestaw metod, które pozwolą na przechowywanie aktualnego stanu dostępności zasobów w trakcie realizacji zadań w projekcie. Wszystkie klasy mają już zdefiniowane pola i nie można ich modyfikować. Można dodawać tylko metody.</p>
+<p>Ogólny zarys działania jest następujący: 1) <strong>zasoby rozróżniamy tylko i wyłącznie po nazwach</strong> 2) Każde zadanie potrzebuje pewnych zasoby (przechowywanych jako zbiór) 3) Projekt posiada pewne aktualnie dostępne zasoby (również zbiór)</p>
+<p>Dokładne sygnatury metod i funkcji należy dobrać tak, aby kompilował się plik <code>main.cpp</code>. Proszę uważać na modyfikatory <code>const</code> i referencje.</p>
+<h2 id="etap-1-2p">Etap 1 (2p)</h2>
+<p>Zaimplementować:</p>
+<ul>
+<li>Elementy potrzebne, aby można było utworzyć <code>std::set&lt;zasoby&gt;</code></li>
+<li>Operator wypisywania dla <code>set&lt;zasoby&gt;</code></li>
+<li><code>projekt::dodaj_zasob</code> – ma jeden argument – zasób. Próbuje dodać podany zasób do zbioru dostępnych. jeśli taki zasób już tam jest zwraca false, jeśli nie ma – dodaje go i zwraca true</li>
+<li><code>projekt::usun_zasob</code> – próbuje usunąć zasób ze zbioru dostępnych. Jeśli jest – usuwa i zwraca true, jeśli nie ma – zwraca false.</li>
+<li><code>projekt::pobierz_dostepne_zasoby</code> – zwraca referencję na zbiór dostępnych zasobów</li>
+</ul>
+<p>Do operatorów wypisujących kolekcje użyć <code>std::ostream_iterator</code> i <code>std::copy</code>.</p>
+<h2 id="etap-2-1p">Etap 2 (1p)</h2>
+<p>Wszystkie metody mają zadanie jako argument.</p>
+<ul>
+<li><code>projekt::czy_da_sie_zrealizowac</code> – zwraca true, gdy zbiór zadań potrzebnych do realizacji zadania jest podzbiorem dostępnych zasobów i false w p. p.</li>
+<li><p><code>projekt::rozpocznij_zadanie</code> – gdy nie da się zreailzować zadania – zwraca false, w przeciwnym wypadku:</p>
+<ul>
+<li>zastępuje zbiór dostępnych zasobów zbiorem z usuniętymi zasobami potrzebnymi do realizacji zadania</li>
+<li>dodaje zadanie do listy zadań w toku</li>
+</ul></li>
+<li><p><code>projekt::zakoncz_zadanie</code> – gdy zadania nie ma na liście zadań w toku, zwraca false, jeśli jest:</p>
+<ul>
+<li>usuwa zadanie z listy zadań w toku</li>
+<li>dodaje je do wektora zadań wykonanych</li>
+<li>dodaje zasoby potrzebne do wykonania zadania do zbioru zasobów dostępnych w projekcie</li>
+</ul></li>
+</ul>
+<h2 id="etap-3-1p">Etap 3 (1p)</h2>
+<ul>
+<li>Operator wypisywania dla projektu – ma wypisywać tylko wektor zrealizowanych zadań (pozostałych pól nie wypisujemy)</li>
+<li><code>projekt::utajnij_zadania</code> – utajnia nazwy wszystkich zadań, których koszt jest większy od 2, poprzez zastąpienie aktualnej nazwy ciągiem “tajne”. <strong>W tej metodzie wolno użyć pętli for po zakresie (ale nie klasycznej pętli for znanej z C)</strong></li>
+</ul>
+<h2 id="etap-4-1p">Etap 4 (1p)</h2>
+<ul>
+<li>funkcja <code>poziom_niezgodnosci_z_planem</code>. Przyjmuje dwa argumenty – wektory zadań równej długości – plan i faktyczną realizację – i liczy na ilu pozycjach nazwy zadań w wektorach różnią się.</li>
+</ul>
+<p>Zwrócić uwagę, że w algorytmie <code>std::inner_product</code> można podać własne działania zamiast + i *.</p>
+</body>
+</html>
