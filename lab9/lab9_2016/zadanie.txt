@@ -1,0 +1,54 @@
+
+Celem zadania jest zaimplementowanie uogólnionej (generic) kolejki FIFO
+z wykorzystaniem tablicy jednowymiarowej. 
+Elementy kolejki powinny "zawijaæ siê" w wewnêtrznej tablicy
+(kopiowanie/przesuwanie elementów koleji mo¿e mieæ miejsce jedynie
+w zwi¹zku z powiekszaniem wewnêtrznej tablicy).
+
+
+W klasie Queue nale¿y dodaæ nastêpuj¹ce elementy (oraz ewentualnie dodatkowe niewymienione, jeœli 
+s¹ ptrzebne):
+
+- konstruktor z parametrem wskazuj¹cym pocz¹tkow¹ wielkoœæ tablicy (domyœlnie 10)
+
+- Enqueue - metodê dodaj¹c¹ na koniec kolejki przekazan¹ w parametrze wartoœæ, w przypadku
+            gdy tablica jest ca³kowicie wype³niona nale¿y dwukrotnie zwiêkszyæ jej dotychczasowy rozmiar
+
+- Dequeue - metodê usuwaj¹c¹ element z pocz¹tku kolejki i zwracaj¹c¹ jego wartoœæ
+
+- Show - metodê wypisuj¹c¹ wartoœci w kolejce oddzielone spacj¹ lub wypisuj¹c¹ komunikat
+         "Pusta kolejka" w przypadku gdy nie ma ¿adnych wartoœci w kolejce 
+
+- w³aœciwoœæ Count - mówi¹c¹ o aktualnej liczbie elementów w kolejce
+
+- Max - metodê zwracaj¹c¹ maksymaln¹ wartoœæ w kolejce (typ parametryzuj¹cy elmenty kolejki
+       implementuje interfejs IComparable), znaleziona wartoœæ pozostaje w kolejce
+       (w przypadku pustej kolejki zwraca wartoœæ domyœln¹ dla typu elementów kolejki)
+
+- Clone - metodê zwracaj¹c¹ nowy skopiowany obiekt klasy kolejka
+       (kolejka implementuje interfejs ICloneable)
+
+
+W klasie QueueExtender nale¿y dodaæ nastêpuj¹ce metody rozszerzaj¹ce klasê Queue:
+
+- Empty - metodê zwracaj¹c¹ informacjê czy kolejka jest pusta czy nie
+
+- ToArray - metodê zwracaj¹c¹ tablicê wartoœci z kolejki (uwaga: metoda nie powinna usuwaæ elementów              
+            z kolejki ani te¿ korzystaæ wprost z tablicy klasy Queue), rozmiar zwróconej tablicy
+            powinien odpowiadaæ liczbie elementów kolejki (a nie rozmiarowi wewnêtrznej tablicy)
+
+
+W Main nale¿y dodaæ fragment kodu tworz¹cy now¹ posortowan¹ kolejkê.
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+PUNKTACJA:
+
+1p. - konstruktor, Show, Count wraz z niezbêdn¹ reszt¹ 
+1p. - Enqueue, Dequeue
+1p. - Max, Clone
+1p. - Empty, ToArray
+1p. - sortowanie w Main
+
