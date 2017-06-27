@@ -1,0 +1,52 @@
+ETAP 1 (2 punkty)
+Nale¿y zaimplementowaæ klasê SlowString realizuj¹c¹ wolne obliczenia na stringach.
+Ma ona konstruktor z 3 parametrami:
+	-string - wartoœæ tekstowa SlowStringa
+	-bool - czy wyœwietlaæ dodatkowe komunikaty, domyœlna wartoœæ false,
+	-int - opóŸnienie ka¿dej operacji w milisekundach, domyœlna wartoœæ 30
+
+i implementuje nastêpuj¹ce metody:
+	-Equal(SlowString other) - zwraca obiekt Task<bool>, który zwraca wynik porównania wartoœci SlowStringów
+	 (powiela wynik metody Equals dla wartoœci)
+	-GreaterThen(SlowString other) - zwraca obiekt Task<bool>, który zwraca informacjê, czy other jest mniejszy
+	 w kolejnoœci alfabetycznej
+	-Last(SlowString other) - zwraca obiekt Task<SlowString>, który zwraca ten z SlowStringów,
+	 który jest wiêkszy w kolejnoœci alfabetycznej
+
+Schemat dzia³ania ka¿dej z metod jest podobny:
+	1. Jeœli wyœwietlamy komunikaty, to wypisujemy "Pocz¹tek operacji"
+	   (oczywiœcie dla ka¿dej operacji piszemy jaka to operacja)
+	2. Czekamy opóŸnienie (np. Task.Delay(...).Wait() lub Thread.Sleep(...))
+	3. Jeœli wyœwietlamy komunikaty, to wypisujemy "Koniec operacji"
+	4. Zwracamy wynik operacji
+Wszystkie te metody powinny byæ zaimplementowane z u¿yciem operatora await.
+Wyœwietlane komunikaty nie mog¹ byæ wewn¹trz wyra¿enia z await (musz¹ byæ na zewn¹trz tego wyra¿enia).
+
+ETAP 2 (1 punkt)
+Nale¿y zaimplementowaæ metodê rozszerzaj¹c¹ Last, dla tablic SlowStringów, która zwraca Task<SlowString>,
+który zwraca element z tablicy najwiêkszy (ostatni) kolejnoœci alfabetycznej.
+Przyjmuje jeden parametr typu bool, który mówi czy wyœwietlamy operacje diagnostyczne dla operacji na SlowStringach
+i ma domyœln¹ wartoœæ false.
+Obliczenia powinny byæ sekwencyjne, ale potencjalnie nie wp³ywaj¹ce na responsywnoœæ aplikacji (async i await).
+
+ETAP 3 (2 punkty)
+
+Nale¿y zaimplementowaæ metodê Concatenate(SlowString other) dla typu SlowString,
+która zwraca konkatenacjê SlowStringów i realizuje schemat dzia³ania innych metod klasy SlowString.
+
+Nale¿y zaimplementowaæ metodê rozszerzaj¹c¹ Concatenate dla tablic SlowStringów,
+która zwraca Task<SlowString>, który zwraca konkatenacjê elementów tablicy.
+Schemat obliczeñ powinien byæ równoleg³y. Proponowany algorytm to:
+	1. Dopóki tablica elementów ma wiêcej ni¿ jeden element
+		2. Tworzymy tablicê Tasków zwracaj¹cych konkatenacjê z dwóch kolejnych elementów tablicy
+		3. Synchronizujemy na zakoñczenie wszystkich Tasków
+		4. Tablica elementów = Tablica wyników tasków i idziemy do punktu 1.
+	5. Zwracamy jedyny element tablicy
+
+Uwaga: Jeœli w rozwi¹zaniu zak³adamy, ¿e pocz¹tkowa liczba elementów jest potêg¹ 2,
+takie rozwi¹zanie jest warte 1 punkt.
+
+Uwaga 2: Wynik metody uruchomionej w oddzielnym w¹tku jako zadanie (Task) mo¿na odczytaæ
+z w³aœciwoœci Result odpowiedniego zadania. Próba odczytu w³aœciwoœci Result jest równie¿ sposobem
+synchronizacji w¹tków (jeœli wynik nie jest jeszcze obliczony to w¹tek odczytuj¹cy czeka na koniec obliczeñ).
+Innym sposoben synchronizacji jest Wywo³anie metody Task.WaitALL(tablica_zadañ).

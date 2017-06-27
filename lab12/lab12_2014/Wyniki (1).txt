@@ -1,0 +1,42 @@
+=== ETAP 1 ===
+SlowString Equals Started
+SlowString Last Started
+SlowString GreaterThen Started
+SlowString Last Ended
+SlowString GreaterThen Ended
+SlowString Equals Ended
+
+Results: False,   c,   True
+
+SlowString Equals Started
+SlowString Equals Ended
+SlowString Last Started
+SlowString Last Ended
+SlowString GreaterThen Started
+SlowString GreaterThen Ended
+
+Results: True,   c,   False
+
+=== ETAP 2 ===
+SlowString Last Started
+SlowString Last Ended
+SlowString Last Started
+SlowString Last Ended
+SlowString Last Started
+SlowString Last Ended
+SlowString Last Started
+SlowString Last Ended
+
+Results: bc,   9
+
+=== ETAP 3 ===
+SlowString Concatenate Started
+SlowString Concatenate Started
+SlowString Concatenate Ended
+SlowString Concatenate Ended
+SlowString Concatenate Started
+SlowString Concatenate Ended
+
+Results: ababcbc,   01234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859
+
+Press any key to continue . . .
