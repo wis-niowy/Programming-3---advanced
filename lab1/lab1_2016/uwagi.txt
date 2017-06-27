@@ -1,0 +1,21 @@
+
+C++
+
+Tworzymy projekt typu "Win32 Console Application".
+Przy tworzeniu projektu wchodzimy w "Application Settings" (albo "next")
+i ustawiamy "Empty project".
+
+Przy takich ustawieniach po wybraniu wykonania "Start Without Debugging" (Ctrl-F5)
+okienko konsoli nie znika po zakonczeniu funkcji main.
+(Po wybraniu wykonania "Start Debugging" (F5) nadal znika, ale po prostu tak nie robimy.) 
+
+Zatrzymywanie wykonania funkcji main w inny sposob np.
+poprzez napisanie na koncu getchar(), system("pause")
+lub czegos innego o podobnym dzialaniu jest zabronione !!!
+
+Takie dzialania powoduja ze main nie wykonuje sie do konca,
+a w szczegolnosci nie wykonuja sie destruktory obiektow zadeklarowanych w main
+oraz wszelkich obiektow statycznych i globalnych.
+
+Zatrzymywanie wykonania funkcji main bedzie traktowane jak proba zamaskowania
+bledow w dzialaniu wspomnianych destruktorow !

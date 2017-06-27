@@ -1,0 +1,33 @@
+PUSTE DRZEWO
+ #
+kasowanie: false
+
+DRZEWO 1-ELEMENTOWE
+wstawianie: true
+ 10 #
+kasowanie: true
+ #
+kasowanie: false
+
+DRZEWO WIELOELEMENTOWE
+ 5 7 10 10 10 15 15 15 20 25 27 30 32 35 #
+kasowanie: true
+ 5 7 10 10 10 15 15 15 20 25 27 32 35 #
+kasowanie: false
+ 5 7 10 10 10 15 15 15 20 25 27 32 35 #
+wstawianie: false
+ 5 7 10 10 10 15 15 15 20 25 27 30 32 35 #
+wstawianie: true
+ 5 7 10 10 10 15 15 15 20 25 27 30 30 32 35 #
+
+KOPIOWANIE DRZEW
+ 5 7 10 10 10 15 15 15 20 25 27 30 30 32 35 #
+ 5 7 10 15 15 15 25 27 32 35 #
+ 5 7 10 10 10 15 15 15 20 25 27 30 32 35 #
+
+ 5 7 10 10 10 15 15 15 20 25 27 30 30 32 35 #
+ 5 7 10 15 15 15 25 27 32 35 #
+ 5 7 10 10 15 15 15 20 20 25 27 32 35 #
+
+KONIEC
+
