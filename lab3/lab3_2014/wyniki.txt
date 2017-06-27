@@ -1,0 +1,101 @@
+
+***** Etap 1 *****
+
+Dodawanie wierzcholka 1:   1
+Dodawanie wierzcholka 3:   1
+Dodawanie wierzcholka 3:   0
+Dodawanie wierzcholka 15:  1
+Dodawanie wierzcholka 5:   1
+Dodawanie wierzcholka 2:   1
+
+Dodawanie krawedzi 1->2:   1
+Dodawanie krawedzi 5->3:   1
+Dodawanie krawedzi 4->2:   0
+Dodawanie krawedzi 3->6:   0
+Dodawanie krawedzi 5->5:   0
+Dodawanie krawedzi 1->2:   0
+Dodawanie krawedzi 2->1:   1
+Dodawanie krawedzi 2->3:   1
+Dodawanie krawedzi 2->5:   1
+Dodawanie krawedzi 15->3:  1
+
+Graf g
+1: (2,5) ;
+2: (1,3) (3,4) (5,5) ;
+3: ;
+5: (3,-2) ;
+15: (3,0) ;
+
+Usuwanie krawedzi 2->5:   1
+Usuwanie krawedzi 2->5:   0
+Usuwanie krawedzi 4->2:   0
+Usuwanie krawedzi 3->6:   0
+Usuwanie krawedzi 5->5:   0
+
+Graf g po usunieciu krawedzi 2->5
+1: (2,5) ;
+2: (1,3) (3,4) ;
+3: ;
+5: (3,-2) ;
+15: (3,0) ;
+
+***** Etap 2 *****
+
+Usuwanie wierzcholka 10:  0
+Graf g po usunieciu wierzcholka 10
+1: (2,5) ;
+2: (1,3) (3,4) ;
+3: ;
+5: (3,-2) ;
+15: (3,0) ;
+
+Usuwanie wierzcholka 15:  1
+Graf g po usunieciu wierzcholka 15
+1: (2,5) ;
+2: (1,3) (3,4) ;
+3: ;
+5: (3,-2) ;
+
+Usuwanie wierzcholka 3:  1
+Graf g po usunieciu wierzcholka 3
+1: (2,5) ;
+2: (1,3) ;
+5: ;
+
+Usuwanie wierzcholka 2:  1
+Graf g po usunieciu wierzcholka 2
+1: ;
+5: ;
+
+***** Etap 3 *****
+
+Graf odwrotny do g
+1: (2,3) ;
+2: (1,5) ;
+3: (2,4) (5,-2) (15,0) ;
+5: ;
+15: ;
+
+***** Etap 4 *****
+
+Graf wczytany z pliku
+1: (2,8) (4,5) ;
+2: (3,2) (7,7) (8,20) ;
+3: (5,4) (6,3) (7,3) ;
+4: (3,4) ;
+5: (6,5) (10,7) ;
+6: (9,7) (10,6) ;
+7: (6,4) (8,10) (9,8) ;
+8: (9,7) (13,11) ;
+9: (12,9) (13,6) ;
+10: (9,5) (11,7) (12,14) ;
+11: (12,6) ;
+12: (15,10) (16,15) ;
+13: (14,7) ;
+14: (15,4) (17,8) ;
+15: (16,2) (17,3) ;
+16: (17,5) ;
+17: ;
+
+***** Koniec *****
+
