@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="Programowanie 3: zaawansowane (zadanie wymyślał: Maciej Bartoszuk)" />
+
+<title>Laboratorium 6B</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+</head>
+
+<body>
+
+<style type="text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Laboratorium 6B</h1>
+<h4 class="author"><em>Programowanie 3: zaawansowane (zadanie wymyślał: Antoni Sobkowicz)</em></h4>
+<h4 class="date"><em>10 listopada 2016</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#zarys-zadania">Zarys zadania</a></li>
+<li><a href="#etapy">Etapy</a><ul>
+<li><a href="#etap-1-2-punkt">Etap 1 (2 punkty)</a></li>
+<li><a href="#etap-2-1-punkt">Etap 2 (1 punkt)</a></li>
+<li><a href="#etap-3-1-punkt">Etap 3 (2 punkty)</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="zarys-zadania" class="section level1">
+<h1>Zarys zadania</h1>
+<p>Celem zadania jest implementacja hierarchii klas, obrazujących strukturę obiektów w grze strategicznej (na przykładzie Starcraft II) - rasy, budynków i jednostek; oraz narzędzi wspomagajacych.</p>
+<p>Hierarchia klas wygląda następująco:</p>
+<ul>
+<li><code>Race</code> – klasa zawierająca nazwę rasy <code>Name</code> typu <code>string</code>, oraz konstruktor w postaci <code>Race(string name)</code></li>
+<li><code>Building</code> – klasa dziedzicząca po klasie <code>Race</code> zawierająca nazwę budynku <code>Name</code> typu <code>string</code>, 
+        metodę <code>GetRaceName()</code> zwracającą nazwę rasy, oraz konstruktor <code>Building(string Name, string _Race)</code> który ustawia nazwę budynku i nazwę rasy</li>
+<li><code>Unit</code> –  klasa dziedzicząca po klasie <code>Building</code> zawierająca nazwę jednostki <code>Name</code> typu <code>string</code>, 
+        metodę <code>GetBuildingName()</code> zwracającą nazwę budynku,
+        oraz konstruktor <code>Unit(string Name, string Building, string _Race)</code> który ustawia nazwę jednostki, budynku i nazwę rasy</li>
+<li><code>L6</code> – Klasa pomocnicza</li>
+</ul>
+</div>
+<div id="etapy" class="section level1">
+<h1>Etapy</h1>
+<div id="etap-1-2-punkt" class="section level2">
+<h2>Etap 1 (2 punkty)</h2>
+<p>Stwórz hierarchię klas, tak by spełniały założenia z zarysu zadania. Wszystkie klasy powinny przedefinowywać metodę <code>GetHashcode()</code> oraz <code>Equals(object obj)</code></p>
+</div>
+<div id="etap-2-1-punkt" class="section level2">
+<h2>Etap 2 (1 punkt)</h2>
+<p>Stwórz klasę L6 - jej składowe to</p>
+<ul>
+<li>pole <code>_Race</code> typu <code>Race</code> zawierające aktualną rasę oraz metodę <code>SetRace(Race race)</code> która ustawia rasę, nie zmieniając jej jeśli obiekt nie jest typu <code>Race</code> (czyli nie typu <code>Building</code> lub <code>Unit</code>)</li>
+<li>pole <code>Buildings</code> typu <code>List&lt;Building&gt;</code> zawierające aktualną listę budynków</li>
+<li>pole <code>Units</code> typu <code>List&lt;Unit&gt;</code> zawierające aktualną listę jednostek</li>
+<li><code>AddBuilding</code>, metoda która przyjmuje jeden argument typu <code>Building</code> dodaje go do listy Buildings. Metoda zwraca true jeśli budynek dodano, false jeśli budynek znajduje sie już na liście, null jeśli budynku nie można dodać (element nie jest budynkiem, nie jest odpowiedniej rasy).</li>
+<li><code>AddBuildingIgnoreConstraints</code>, metoda która przyjmuje jeden argument typu <code>Building</code> dodaje go do listy Buildings. Metoda zwraca true jeśli budynek dodano, false jeśli budynek znajduje sie już na liście.</li>
+</ul>
+</div>
+<div id="etap-3-1-punkt" class="section level2">
+<h2>Etap 3 (2 punkty)</h2>
+<p>Rozszerz klasę L6</p>
+<ul>
+    <li><code>AddUnit</code>, metoda która przyjmuje jeden argument typu <code>Unit</code> dodaje go do listy Units. Metoda zwraca true jeśli jednostkę dodano, false jeśli jednostka znajduje sie już na liście, null jeśli jednostki nie można dodać (element nie jest jednostką, nie jest odpowiedniej rasy, na liście budynków nie ma odpowiedniego budynku).</li>
+    <li><code>AddUnitIgnoreConstraints</code>, metoda która przyjmuje jeden argument typu <code>Unit</code> dodaje go do listy Units. Metoda zwraca true jeśli jednostkę dodano, false jeśli jednostka znajduje sie już na liście.</li>
+    <li><code>AreUnitsSameRace</code> - metoda która zwraca true jeśli wszystkie jednostki na liście mają tę samą rasę, false jeśli nie, null jeśli lista jednostek jest pusta.</li>    
+</ul>
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>
