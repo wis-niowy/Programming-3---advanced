@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#stl-i-funkcje-lambda">STL i funkcje lambda</a><ul>
+<li><a href="#etap-1">Etap 1</a></li>
+<li><a href="#etap-2">Etap 2</a></li>
+<li><a href="#etap-3">Etap 3</a></li>
+<li><a href="#etap-4">Etap 4</a></li>
+<li><a href="#etap-5">Etap 5</a></li>
+<li><a href="#uwagi-i-podpowiedzi">Uwagi i podpowiedzi</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="stl-i-funkcje-lambda">STL i funkcje lambda</h1>
+<p>Zadanie wymaga korzystanie z algorytmów STL i funkcji lambda. W rozwiązaniu <strong>nie wolno</strong> używać żadnych pętli.</p>
+<p>Zadanie polega na napisaniu kilku operacji związanych z książką telefoniczną reprezentowaną jako wektor wpisów. Dana jest klasa <code>entry</code> i klasa zawierające wektor tych wpisów. Klasa <code>entry</code> jest kompletna i nie ma potrzeby dodawania do niej nowych elementów.</p>
+<p>Telefony w dziwnym systemie używanym w tej książce nie są wektorami cyfr, a wektorami liczb od 0 do 255 (czyli cyfr w systemie pozycyjnym o podstawie 265).</p>
+<p>Zadanie składa się z 5 etapów, każdy za 1 punkt, które można wykonywać niezależnie od siebie.</p>
+<h2 id="etap-1">Etap 1</h2>
+<p>Napisać metodę <code>address_book::last_names_starting_with</code>, która przyjmuje jeden argument typu char i zwraca <strong>nową</strong> książkę adresową, zawierającą tylko te wpisy z danej, w których <code>last_name</code> zaczyna się na podaną jako argument literę.</p>
+<h2 id="etap-2">Etap 2</h2>
+<p>Uzupełnić fragment funkcji <code>main</code>, który wygeneruje losowe trzy identyczne książki telefoniczne.</p>
+<p>Dany jest konstruktor klasy <code>entry</code> konstruujący wpis z liczby losowej. Należy wygenerować wpisy poprzez tworzenie ich na podstawie kolejnych wylosowanych liczb.</p>
+<p>Uwaga! Ten konstruktor nie jest oznaczony jako explicit, co oznacza, że zadziała jak konwerter z <code>int</code> do <code>entry</code>. Wykorzystać ten fakt.</p>
+<ol start="0" type="1">
+<li>W <code>main</code> jest zmienna <code>seed</code>.</li>
+<li>Zdefiniować funkcję lambda, która zwraca kolejne elementy X(1), X(2), … ciągu zdefiniowanego poniżej (każde wywołanie zwraca następny element).</li>
+<li>Użyć algorytmu, który wypełni każdą z list <code>random1</code>, <code>random2</code>, <code>random3</code> 5 egzemplarzami wpisów wygenerowanymi na podstawie kolejnych wartości zdefiniowanej lambdy.</li>
+</ol>
+<p>Ciąg pseudolosowy: <code>X(n) = X(n-1)*571+59</code>, <code>X(0)=seed</code>.</p>
+<h2 id="etap-3">Etap 3</h2>
+<p>Napisać metody klasy <code>address_book</code>:</p>
+<ul>
+<li><p><code>sort_by_first_name</code>, która sortuje książkę rosnąco według pola <code>first_name</code> i zwraca liczbę porównań wykonaną przez algorytm sortujący.</p></li>
+<li><p><code>sort_by_lastfirst_name</code>, która sortuje książkę rosnąco według pola <code>last_name</code>, a w przypadku remisu uwzględnia <code>first_name</code> i zwraca liczbę porównań wykonaną przez algorytm sortujący.</p></li>
+</ul>
+<p>Podpowiedź: do zliczania operacji porównania można wykorzystać przechwytywanie zmiennej przez referencję.</p>
+<h2 id="etap-4">Etap 4</h2>
+<p>Napisać metody klasy <code>address_book</code>:</p>
+<ul>
+<li><p><code>shorten_first_last_name</code>, która przyjmuje jeden argument – liczbę całkowitą i zwraca nową książkę, gdzie wszystkie <code>last_name</code> dłuższe niż podana liczba są obcięte do tej długości, a pozostałe pola są bez zmian.</p></li>
+<li><p><code>count_phone_numbers_ending_with</code> – przyjmuje liczbę całkowitą jako argument i zwraca liczbę wpisów w książce, gdzie numer telefonu kończy się taką liczbą.</p></li>
+</ul>
+<h2 id="etap-5">Etap 5</h2>
+<p>Napisać metodę <code>do_address_books_contains_same_names</code>, która przyjmuje referencję na inną książkę adresową jako argument i zwraca informację (<code>bool</code>), czy zawiera ona wpisy dotyczące tych samych osób w tej samej liczbie (musi się zgadzać imię i nazwisko, nie musi: numer telefonu), być może w innej kolejności.</p>
+<p>Inaczej: sprawdza, czy wpisy w drugiej książce są permutacją wpisów w pierwszej (ignorując przy tym numery telefonów).</p>
+<h2 id="uwagi-i-podpowiedzi">Uwagi i podpowiedzi</h2>
+<p>Funkcje lambda są dość nowym elementem języka C++ pozwalającym w znacznie krótszy sposób napisać to, co w poprzednich wersjach trzeba było robić z użyciem funktorów (klas ze zdefiniowanym operatorem <code>()</code>). Odpowiednikiem pól klasy funktora w lambdach są zmienne przechwycone z użyciem nawiasów kwadratowych. Domyślnie zmiennych przechwyconych przez kopię nie można ich modyfikować (podobne zachowanie jak zadeklarowanie w funktorze pól z kwalifikatorem <code>const</code>). Aby zmienić to zachowanie, należy zdefiniować lambdę z modyfikatorem <code>mutable</code>:</p>
+<pre class="sourceCode Cpp"><code class="sourceCode cpp">[zmienna1, zmienna2] (<span class="dt">bool</span> arg1, <span class="dt">int</span> arg2) <span class="dt">mutable</span> {
+<span class="co">// Kod, który modyfikuje zmienna1 i/lub zmienna2</span>
+}</code></pre>
+</body>
+</html>

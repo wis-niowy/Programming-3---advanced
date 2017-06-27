@@ -1,0 +1,89 @@
+Stan poczatkowy
+Boleslaw Chrobry: 3 14 76 97 23 1 
+Kazimierz Odnowiciel: 5 2 1 1 1 1 67 
+Wladyslaw Warnenczyk: 1 2 3 
+Kazimierz Waza: 1 2 3 
+Wladyslaw Jagiello: 3 3 3 
+Jan Sobieski: 1 2 3 
+Zygmunt Waza: 1 2 5 6 99 1 
+
+Etap 1
+Nazwiska na W
+Wladyslaw Warnenczyk: 1 2 3 
+Kazimierz Waza: 1 2 3 
+Zygmunt Waza: 1 2 5 6 99 1 
+Nazwiska na O
+Kazimierz Odnowiciel: 5 2 1 1 1 1 67 
+Nazwiska na X
+
+Etap 2
+Myszka Pluto: 21 90 137 
+Pies Donald: 50 20 120 73 3 
+Makrela Pluto: 99 13 50 33 
+Makrela Pluto: 
+Kaczor Donald: 17 126 44 73 2 
+
+Myszka Pluto: 21 90 137 
+Pies Donald: 50 20 120 73 3 
+Makrela Pluto: 99 13 50 33 
+Makrela Pluto: 
+Kaczor Donald: 17 126 44 73 2 
+
+Myszka Pluto: 21 90 137 
+Pies Donald: 50 20 120 73 3 
+Makrela Pluto: 99 13 50 33 
+Makrela Pluto: 
+Kaczor Donald: 17 126 44 73 2 
+
+
+Etap 3
+Sort by first name -- porównan: 17
+Wyniki sortowania
+Boleslaw Chrobry: 3 14 76 97 23 1 
+Jan Sobieski: 1 2 3 
+Kazimierz Odnowiciel: 5 2 1 1 1 1 67 
+Kazimierz Waza: 1 2 3 
+Wladyslaw Warnenczyk: 1 2 3 
+Wladyslaw Jagiello: 3 3 3 
+Zygmunt Waza: 1 2 5 6 99 1 
+
+Sort by last,first name -- porównan: 18
+Wyniki sortowania
+Boleslaw Chrobry: 3 14 76 97 23 1 
+Wladyslaw Jagiello: 3 3 3 
+Kazimierz Odnowiciel: 5 2 1 1 1 1 67 
+Jan Sobieski: 1 2 3 
+Wladyslaw Warnenczyk: 1 2 3 
+Kazimierz Waza: 1 2 3 
+Zygmunt Waza: 1 2 5 6 99 1 
+
+
+Etap 4
+Shorten name 3
+Bol Chr: 3 14 76 97 23 1 
+Wla Jag: 3 3 3 
+Kaz Odn: 5 2 1 1 1 1 67 
+Jan Sob: 1 2 3 
+Wla War: 1 2 3 
+Kaz Waz: 1 2 3 
+Zyg Waz: 1 2 5 6 99 1 
+
+Shorten name 5
+Boles Chrob: 3 14 76 97 23 1 
+Wlady Jagie: 3 3 3 
+Kazim Odnow: 5 2 1 1 1 1 67 
+Jan Sobie: 1 2 3 
+Wlady Warne: 1 2 3 
+Kazim Waza: 1 2 3 
+Zygmu Waza: 1 2 5 6 99 1 
+
+Count even phone numbers 3
+4
+Count even phone numbers 1
+2
+
+Etap 5
+Same names 1 powinno byc 1
+Same names 0 powinno byc 0
+Same names 0 powinno byc 0
+Same names 0 powinno byc 0
